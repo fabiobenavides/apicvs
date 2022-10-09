@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICVS", "APICVS.csproj", "{3DBF8F44-4946-4D69-B50A-F5B6766B268A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "..\BL\BL.csproj", "{1EF454EC-C128-4C88-AADC-1F3B8DA247A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DBF8F44-4946-4D69-B50A-F5B6766B268A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBF8F44-4946-4D69-B50A-F5B6766B268A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBF8F44-4946-4D69-B50A-F5B6766B268A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBF8F44-4946-4D69-B50A-F5B6766B268A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF454EC-C128-4C88-AADC-1F3B8DA247A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF454EC-C128-4C88-AADC-1F3B8DA247A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF454EC-C128-4C88-AADC-1F3B8DA247A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF454EC-C128-4C88-AADC-1F3B8DA247A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68D2C48E-4733-4DD0-85AC-7FE53FF2C251}
+	EndGlobalSection
+EndGlobal
