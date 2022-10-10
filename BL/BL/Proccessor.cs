@@ -4,30 +4,27 @@
     {
         public string Process(string inputCvs)
         {
-            var replacedDoubleQuoteCommaDoubleQuote = inputCvs.Replace("\",\"", "] [");
+            var delimiters = new string[] { "\\v", "\v", "\r\n", "\n"};
+            string[] split = inputCvs.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            List<string> proccessedCvs = new();
+            foreach (var line in split)
+            {
+                var lineProccessed = ProcessLine(line);
+                proccessedCvs.Add(lineProccessed);
+            }
+            var finalResult = String.Join(Environment.NewLine, proccessedCvs.ToArray());
+            return finalResult;
+        }
+
+        private string ProcessLine(string line)
+        {
+            var replacedDoubleQuoteCommaDoubleQuote = line.Replace("\",\"", "] [");
             var replacedFirstDoubleQuote = "[" + replacedDoubleQuoteCommaDoubleQuote.Substring(1);
             var replacedFinalDoubleQuote = replacedFirstDoubleQuote.TrimEnd('"') + "]";
             var replacedDoubleQuoteComma = replacedFinalDoubleQuote.Replace("\",", "] [");
             var replacedDoubleQuoteCommaSpate = replacedDoubleQuoteComma.Replace(",\"", "] [");
-            var basicReplacedDone = replacedDoubleQuoteCommaSpate.Split("] [");
-            for (var i = 0; i < basicReplacedDone.Length; i++)
-            {
-                basicReplacedDone[i] = basicReplacedDone[i].Replace(" =", "=");
-                basicReplacedDone[i] = basicReplacedDone[i].Replace("= ", "=");
-                if (!basicReplacedDone[i].Contains(", "))
-                {
-                    continue;
-                }
-                var token = basicReplacedDone[i];
-                var commaFoundIndex = token.IndexOf(',');
-                var charBefore = token.Substring(commaFoundIndex - 1, 1);
-                if (!int.TryParse(charBefore, out _))
-                {
-                    continue;
-                }
-                basicReplacedDone[i] = basicReplacedDone[i].Replace(", ", ",");
-            }
-            var finalString = string.Join("] [", basicReplacedDone);
+            var replacedDone = replacedDoubleQuoteCommaSpate.Split("] [");
+            var finalString = string.Join("] [", replacedDone);
             return finalString;
         }
     }
